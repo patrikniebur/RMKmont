@@ -15,7 +15,7 @@ function taskClean(cb) {
 function taskInject() {
     const sources = gulp.src(['*.js', '*.css'], {read: false, cwd: dist});
     return gulp.src('./src/index.html')
-        .pipe(inject(sources, {relative: true, ignorePath: '../dist'}))
+        .pipe(inject(sources, {relative: true, ignorePath: '.' + dist}))
         .pipe(gulp.dest(dist));
 }
 
